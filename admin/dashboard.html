@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - LuCky DaIly Prediction</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/admin.css">
+</head>
+<body>
+    <!-- Admin Login Screen -->
+    <div id="admin-login" class="admin-auth-container">
+        <div class="admin-auth-card">
+            <h2>Admin Login</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" required>
+                </div>
+                <button type="submit" class="admin-btn">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Admin Dashboard (Initially Hidden) -->
+    <div id="admin-dashboard" class="hidden">
+        <header class="admin-header">
+            <h1>Admin Dashboard</h1>
+            <button id="logout-btn" class="admin-btn">Logout</button>
+        </header>
+
+        <main class="admin-main">
+            <section class="admin-section">
+                <h2>Add New Match</h2>
+                <form id="add-match-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="league-name">League</label>
+                            <input type="text" id="league-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="match-date">Date</label>
+                            <input type="date" id="match-date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="match-time">Time</label>
+                            <input type="time" id="match-time" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="home-team">Home Team</label>
+                            <input type="text" id="home-team" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="away-team">Away Team</label>
+                            <input type="text" id="away-team" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="home-logo-url">Home Logo URL</label>
+                            <input type="text" id="home-logo-url">
+                        </div>
+                        <div class="form-group">
+                            <label for="away-logo-url">Away Logo URL</label>
+                            <input type="text" id="away-logo-url">
+                        </div>
+                    </div>
+                    
+                    <h3>Predictions</h3>
+                    
+                    <div class="predictions-inputs">
+                        <div class="form-group">
+                            <label for="prediction-type">Prediction Type</label>
+                            <select id="prediction-type">
+                                <option value="1X2">1X2</option>
+                                <option value="BTTS">Both Teams To Score</option>
+                                <option value="Over/Under">Over/Under</option>
+                                <option value="Double Chance">Double Chance</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="prediction-value">Value</label>
+                            <input type="text" id="prediction-value" placeholder="e.g. Home Win, Yes, Over 2.5">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="confidence">Confidence (1-5)</label>
+                            <input type="number" id="confidence" min="1" max="5" value="3">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="prediction-reasoning">Analysis & Reasoning</label>
+                        <textarea id="prediction-reasoning" rows="4"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="admin-btn">Add Match</button>
+                </form>
+            </section>
+
+            <section class="admin-section">
+                <h2>Manage Matches</h2>
+                <div class="match-list-filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="today">Today</button>
+                    <button class="filter-btn" data-filter="upcoming">Upcoming</button>
+                </div>
+                
+                <div id="admin-matches-container">
+                    <!-- Matches will be listed here dynamically -->
+                    <div class="loading">Loading matches...</div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-storage-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-database-compat.js"></script>
+    
+    <!-- Admin Scripts -->
+    <script src="../assets/js/firebase-config.js"></script>
+    <script src="../assets/js/auth.js"></script>
+    <script src="../assets/js/admin.js"></script>
+</body>
+</html>
