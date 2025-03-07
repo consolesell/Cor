@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Match Details - LuCky DaIly Prediction</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+</head>
+<body>
+    <div id="match-details">
+        <!-- Header with Back Button -->
+        <header>
+            <div class="back-btn">
+                <a href="index.html"><i class="fas fa-arrow-left"></i></a>
+            </div>
+            <h1>Match Details</h1>
+            <div class="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </div>
+        </header>
+
+        <!-- Match Info Section -->
+        <section class="match-header">
+            <div class="league-info">
+                <span id="league-name">Loading...</span>
+                <span id="match-datetime">Loading...</span>
+            </div>
+            
+            <div class="teams-container">
+                <div class="team home-team">
+                    <img id="home-team-logo" src="assets/images/teams/placeholder.png" alt="Home Team">
+                    <h3 id="home-team-name">Home Team</h3>
+                </div>
+                
+                <div class="vs-container">
+                    <span>VS</span>
+                </div>
+                
+                <div class="team away-team">
+                    <img id="away-team-logo" src="assets/images/teams/placeholder.png" alt="Away Team">
+                    <h3 id="away-team-name">Away Team</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- Predictions Section -->
+        <section class="predictions-section">
+            <h2>Predictions & Tips</h2>
+            
+            <div id="tips-container">
+                <!-- Loading placeholder -->
+                <div class="loading-tips">
+                    <div class="loader"></div>
+                    <p>Loading predictions...</p>
+                </div>
+                
+                <!-- Tips will be dynamically inserted here -->
+            </div>
+        </section>
+
+        <!-- Reasoning Section -->
+        <section class="reasoning-section">
+            <h2>Analysis & Reasoning</h2>
+            <div class="reasoning-card">
+                <p id="prediction-reasoning">Loading analysis...</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-database-compat.js"></script>
+    
+    <!-- App Scripts -->
+    <script src="assets/js/firebase-config.js"></script>
+    <script src="assets/js/matches.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
