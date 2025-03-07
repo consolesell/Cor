@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuCky DaIly Prediction</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+</head>
+<body>
+    <!-- Splash Screen -->
+    <div id="splash-screen">
+        <div class="splash-content">
+            <img src="assets/images/logo.png" alt="LuCky DaIly Prediction" class="logo-animation">
+            <div class="loader"></div>
+        </div>
+    </div>
+
+    <!-- Main App (Initially Hidden) -->
+    <div id="app" class="hidden">
+        <!-- Header -->
+        <header>
+            <div class="logo-container">
+                <img src="assets/images/logo.png" alt="LuCky DaIly">
+                <h1>LuCky DaIly Prediction</h1>
+            </div>
+            <div class="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </div>
+        </header>
+
+        <!-- Navigation Tabs -->
+        <nav class="tab-navigation">
+            <button class="tab-btn active" data-filter="today">Today</button>
+            <button class="tab-btn" data-filter="tomorrow">Tomorrow</button>
+            <button class="tab-btn" data-filter="upcoming">Upcoming</button>
+        </nav>
+
+        <!-- Featured Banner -->
+        <div class="featured-banner">
+            <img src="assets/images/football-bg.jpg" alt="Featured Content">
+            <div class="banner-text">
+                <h2>Premium Football Predictions</h2>
+                <p>Expertly analyzed matches for today</p>
+            </div>
+        </div>
+
+        <!-- Matches Section -->
+        <main>
+            <div class="leagues-container">
+                <!-- League groups will be dynamically inserted here -->
+                <div id="matches-container">
+                    <!-- Loading placeholder -->
+                    <div class="loading-matches">
+                        <div class="loader"></div>
+                        <p>Loading matches...</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-storage-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-database-compat.js"></script>
+    
+    <!-- App Scripts -->
+    <script src="assets/js/firebase-config.js"></script>
+    <script src="assets/js/matches.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
