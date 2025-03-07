@@ -1,0 +1,94 @@
+/* Animation styles */
+
+/* Splash screen animations */
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Apply animations to elements */
+.logo-animation {
+    animation: bounce 2s ease infinite;
+}
+
+/* Page transition animations */
+.page-transition {
+    animation: fadeInScale 0.3s ease forwards;
+}
+
+/* Match card hover effects */
+.match-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.match-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Button animations */
+.tab-btn, 
+.admin-btn,
+.filter-btn {
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.tab-btn:active,
+.admin-btn:active,
+.filter-btn:active {
+    transform: scale(0.95);
+}
+
+/* Loading spinner pulse */
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        opacity: 0.7;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.95);
+        opacity: 0.7;
+    }
+}
+
+.loading-matches,
+.loading-tips {
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+/* Star rating hover effect */
+.confidence-stars i {
+    transition: transform 0.2s ease;
+}
+
+.tip-card:hover .confidence-stars i {
+    transform: scale(1.2);
+    transition-delay: calc(var(--i) * 0.05s);
+}
+
+/* Smooth scrolling for entire page */
+html {
+    scroll-behavior: smooth;
+}
